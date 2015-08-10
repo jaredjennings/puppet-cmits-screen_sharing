@@ -15,5 +15,6 @@
 # % limitations under the License.
 # \subsection{Disable screen sharing}
 class screen_sharing::no {
-    include "screen_sharing::no::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "screen_sharing::no::${lower_osfamily}"
 }
